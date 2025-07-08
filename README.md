@@ -1,82 +1,94 @@
+# Code samples for Microsoft identity platform documentation - Node.js & JavaScript
+
+Welcome to the Microsoft Identity Platform Node.js & JavaScript Code Samples repository!
+
+This repository provides a comprehensive set of end-to-end samples demonstrating how to integrate Microsoft Entra ID authentication and authorization into Node.js applications. The samples are organized by scenario and technology, making it easy to find the right starting point for your needs.
+
+## 📁 Repository Structure
+
+The samples are grouped into several main categories, each corresponding to a common application scenario:
+
+- `ms-identity-javascript-nodejs-console/` – Node.js console/daemon applications
+- `ms-identity-javascript-nodejs-desktop/` – Electron desktop applications
+- `ms-identity-javascript-nodejs-tutorial/` – Multi-chapter tutorial for Node.js & Express web apps, including authentication, authorization, deployment, access control, and advanced scenarios
+- `ms-identity-node/` – Standalone Express web app sample
+
+Each scenario folder contains one or more samples, each with its own README and instructions.
+
 ---
-page_type: sample
-languages:
-- javascript
-- nodejs
-products:
-- msal-node
-- microsoft-entra-id
-description: "Add authentication to a Node.js web application with the Microsoft Authentication Library for Node.js (MSAL Node)."
-urlFragment: "ms-identity-node"
+
+## 🗂️ Sample Scenarios
+
+| Folder                                         | Description                                                                                      |
+|------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| **ms-identity-javascript-nodejs-console**      | Node.js console/daemon app using MSAL Node to acquire tokens and call web APIs.                  |
+| **ms-identity-javascript-nodejs-desktop**      | Electron desktop app demonstrating interactive authentication and API calls.                      |
+| **ms-identity-javascript-nodejs-tutorial**     | Multi-chapter tutorial covering authentication, authorization, deployment, access control, and advanced scenarios (BFF, React SPA, CAE, etc.) in Node.js & Express. |
+| **ms-identity-node**                           | Standalone Express web app with MSAL Node for sign-in and Microsoft Graph calls.                 |
+
 ---
 
-# Express web application built with MSAL Node and Microsoft identity platform
+## 🚀 Getting Started
 
-This sample demonstrates how to use [MSAL Node](https://www.npmjs.com/package/@azure/msal-node) to login, logout and acquire an access token for a protected resource such as Microsoft Graph.
+1. **Browse the scenario folders** above to find the sample that matches your use case.
+2. **Read the sample’s README.md** for prerequisites, setup instructions, and code walkthroughs.
+3. **Clone and run the sample** following the provided steps.
 
-## Features
+All samples use the latest supported Node.js versions and Microsoft Authentication Library (MSAL) for Node.js.
 
-This sample demonstrates the following MSAL Node concepts:
+---
 
-- Configuration
-- Login
-- Logout
-- Acquiring an access token and calling Microsoft Graph
+## 🔍 Finding the Right Sample
+
+- **By scenario:** Start with the folder that matches your application type (console, desktop, web app, advanced).
+- **By technology:** Within each folder, samples are organized by technology (e.g., Express, Electron).
+- **By feature:** Each sample README highlights the authentication flow, APIs called, and any advanced features.
+
+---
+
+## 📝 Configuration & Security
+
+- **Configuration** is managed via environment variables or configuration files (e.g., `authConfig.js`).
+- **Secrets and credentials** should never be committed to source control. Use [Azure Key Vault](https://learn.microsoft.com/azure/key-vault/general/basic-concepts) or environment variables for sensitive data.
+- **PowerShell scripts** are provided where helpful for Microsoft Entra app registration.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions!  
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on submitting new samples or improvements.
+
+---
+
+## 📢 Support & Feedback
+
+- For questions, open an issue in this repository.
+- For Microsoft identity platform documentation, visit [learn.microsoft.com/entra/identity-platform](https://learn.microsoft.com/entra/identity-platform).
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Happy coding!
 
 ## Contents
 
-| File/folder       | Description                                |
-|-------------------|--------------------------------------------|
-| `App/`            | Application source code resides here.      |
-| `AppCreationScripts/` | Contains PowerShell scripts for automating app registration.      |
-| `.gitignore`      | Define what to ignore at commit time.      |
-| `CHANGELOG.md`    | List of changes to the sample.             |
-| `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
-| `README.md`       | This README file.                          |
-| `LICENSE`         | The license for the sample.                |
+| Sample directory                                 | Application type         | Feature(s) demonstrated                                  | Authentication libraries used |
+|:-------------------------------------------------|-------------------------|----------------------------------------------------------|-------------------------------|
+| ms-identity-javascript-nodejs-console            | Console/daemon app      | Token acquisition, web API calls                         | MSAL Node                     |
+| ms-identity-javascript-nodejs-desktop            | Electron desktop app    | Interactive login, token acquisition, web API calls      | MSAL Node                     |
+| ms-identity-javascript-nodejs-tutorial           | Web app (multi-scenario)| Authentication, authorization, deployment, access control, advanced scenarios | MSAL Node, Express, React     |
+| ms-identity-node                                 | Express web app         | Sign-in, token acquisition, Microsoft Graph calls        | MSAL Node, Express            |
 
-**Note:** This sample was bootstrapped using [express-generator](https://expressjs.com/en/starter/generator.html).
+## Resources
 
-## Getting Started
-
-### Prerequisites
-
-[Node.js](https://nodejs.org/en/) must be installed to run this sample.
-
-### Setup
-
-1. Register a new application by following the steps shown [here](https://docs.microsoft.com/azure/active-directory/develop/web-app-quickstart?pivots=devlang-nodejs-msal#step-1-register-your-application)
-1. Clone this repository `git clone https://github.com/Azure-Samples/ms-identity-node.git`
-1. Open the [/App/.env.dev](./App/.env.dev) file and provide the required configuration values
-1. On the command line, navigate to the `App` folder, and run`npm install` to install the project dependencies via npm
-
-## Running the sample
-
-1. Configure authentication and authorization parameters:
-   1. Open `App/.env.dev`
-   1. Replace the string `"Enter_the_Application_Id_Here"` with your app/client ID on Microsoft Entra admin center.
-   1. Replace the string `"Enter_the_Cloud_Instance_Id_Here"` with `"https://login.microsoftonline.com/"`
-   1. Replace the string `"Enter_the_Tenant_Info_Here"` with your tenant ID on Microsoft Entra admin center.
-   1. Replace the string `"Enter_the_Client_Secret_Here"` with your client secret on Microsoft Entra admin center.
-1. Configure the parameters for calling MS Graph API:
-   1. Replace the string `"Enter_the_Graph_Endpoint_Here"` with `"https://graph.microsoft.com/"`
-1. Configure the Express session secret:
-   1. Replace the string `"Enter_the_Express_Session_Secret_Here"` with a hard to guess value, such as your client secret.
-1. To start the sample application, run `npm start`.
-1. Finally, open a browser and navigate to [http://localhost:3000](http://localhost:3000).
-
-> :information_source: To configure this app for tenants on Sovereign/National clouds, see: [Use MSAL in a national cloud environment](https://docs.microsoft.com/azure/active-directory/develop/msal-national-cloud)
-
-## Contributing
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
-
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+- Documentation on learn.microsoft.com
+  - [Microsoft identity platform product documentation](https://learn.microsoft.com/entra/identity-platform/)
+  - [Microsoft Authentication Library (MSAL) documentation](https://learn.microsoft.com/entra/identity-platform/msal-overview)
+- Authentication library source code on GitHub
+  - [Microsoft Authentication Library for JavaScript](https://github.com/AzureAD/microsoft-authentication-library-for-js)
