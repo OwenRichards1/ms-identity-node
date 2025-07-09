@@ -1,8 +1,8 @@
-# Code samples for Microsoft ide1. **Browse the scenario folders** above to find the sample that matches your use case.
-2. **Read the sample's README.md** for prerequisites, setup instructions, and code walkthroughs.
-3. **Clone and run the sample** following the provided steps.
+# Code samples for Microsoft identity platform documentation - Node.js
 
-All samples use the latest supported Node.js versions and Microsoft Authentication Library (MSAL) for Node.js.
+Welcome to the Microsoft Identity Platform Node.js Code Samples repository!
+
+This repository provides a comprehensive set of end-to-end samples demonstrating how to integrate Microsoft Entra ID authentication and authorization into Node.js applications. The samples are organized by scenario and technology, making it easy to find the right starting point for your needs.
 
 ### Sample Categories Overview
 
