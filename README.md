@@ -27,25 +27,19 @@ This repository provides a comprehensive set of end-to-end samples demonstrating
 
 ## 📁 Repository Structure
 
-The samples are grouped into several main categories, each corresponding to a common application scenario:
+The samples are grouped into five main categories, each corresponding to a common application scenario:
 
-- `1-server-side/` – Node.js & Express web applications, console apps, and daemon applications
-- `2-client-side/` – Client-side applications (React SPAs with BFF pattern)
-- `3-desktop/` – Desktop applications (Electron apps)
-- `5-advanced/` – Advanced scenarios including Backend for Frontend (BFF) architectures
-
-Each scenario folder contains one or more samples, each with its own README and instructions.
+| Folder            | App description                                                                                  | Authentication libraries                      |
+|-------------------|-------------------------------------------------------------------------------------------------|-----------------------------------------------|
+| [1-server-side](./1-server-side)      | Node.js & Express web applications, console applications, and daemon services with Microsoft Entra sign-in | MSAL Node<br>MSAL Node Wrapper        |
+| [2-client-side](./2-client-side)      | Client-side React Single Page Applications with Backend-for-Frontend pattern              | React<br>MSAL Node (BFF backend)        |
+| [3-desktop](./3-desktop)  | Electron desktop applications with interactive authentication                                                | MSAL Node |
+| [4-advanced](./4-advanced) | Advanced scenarios including Backend for Frontend (BFF) architectures with React SPA and Express backend | MSAL Node<br>React<br>MS Graph SDK                                    |
+| [5-samples-index](./SAMPLES_INDEX.md) | Complete index of all samples with detailed descriptions and feature mappings | All libraries                                    |
 
 ---
 
-## 🗂️ Sample Scenarios
-
-| Folder                                         | Description                                                                                      |
-|------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| **1-server-side**                              | Node.js & Express web applications, console applications, and daemon services.                  |
-| **2-client-side**                              | Client-side React Single Page Applications with Backend-for-Frontend pattern.                   |
-| **3-desktop**                                  | Desktop applications using Electron framework.                                                  |
-| **5-advanced**                                 | Advanced scenarios including Backend for Frontend (BFF) with React SPA and Express backend.     |
+Each folder contains one or more samples, each with its own README and instructions.
 
 ---
 
