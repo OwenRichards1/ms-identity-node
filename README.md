@@ -1,6 +1,27 @@
-# Code samples for Microsoft identity platform documentation - Node.js & JavaScript
+# Code samples for Microsoft ide1. **Browse the scenario folders** above to find the sample that matches your use case.
+2. **Read the sample's README.md** for prerequisites, setup instructions, and code walkthroughs.
+3. **Clone and run the sample** following the provided steps.
 
-Welcome to the Microsoft Identity Platform Node.js & JavaScript Code Samples repository!
+All samples use the latest supported Node.js versions and Microsoft Authentication Library (MSAL) for Node.js.
+
+### Sample Categories Overview
+
+**🌐 Server-side Applications (9 samples)**
+- Express web applications with various authentication patterns
+- Console and daemon applications for service-to-service scenarios
+- From basic authentication to advanced features like RBAC and Microsoft Graph integration
+
+**💻 Client-side Applications (1 sample)**
+- React Single Page Applications with Backend-for-Frontend architecture
+
+**🖥️ Desktop Applications (1 sample)**
+- Electron-based desktop applications with interactive authentication
+
+**🚀 Advanced Scenarios (2 samples)**
+- Complete Backend-for-Frontend implementations
+- Multi-tier architectures with React frontends and Express backends platform documentation - Node.js
+
+Welcome to the Microsoft Identity Platform Node.js Code Samples repository!
 
 This repository provides a comprehensive set of end-to-end samples demonstrating how to integrate Microsoft Entra ID authentication and authorization into Node.js applications. The samples are organized by scenario and technology, making it easy to find the right starting point for your needs.
 
@@ -8,10 +29,10 @@ This repository provides a comprehensive set of end-to-end samples demonstrating
 
 The samples are grouped into several main categories, each corresponding to a common application scenario:
 
-- `ms-identity-javascript-nodejs-console/` – Node.js console/daemon applications
-- `ms-identity-javascript-nodejs-desktop/` – Electron desktop applications
-- `ms-identity-javascript-nodejs-tutorial/` – Multi-chapter tutorial for Node.js & Express web apps, including authentication, authorization, deployment, access control, and advanced scenarios
-- `ms-identity-node/` – Standalone Express web app sample
+- `1-server-side/` – Node.js & Express web applications, console apps, and daemon applications
+- `2-client-side/` – Client-side applications (React SPAs with BFF pattern)
+- `3-desktop/` – Desktop applications (Electron apps)
+- `5-advanced/` – Advanced scenarios including Backend for Frontend (BFF) architectures
 
 Each scenario folder contains one or more samples, each with its own README and instructions.
 
@@ -21,10 +42,10 @@ Each scenario folder contains one or more samples, each with its own README and 
 
 | Folder                                         | Description                                                                                      |
 |------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| **ms-identity-javascript-nodejs-console**      | Node.js console/daemon app using MSAL Node to acquire tokens and call web APIs.                  |
-| **ms-identity-javascript-nodejs-desktop**      | Electron desktop app demonstrating interactive authentication and API calls.                      |
-| **ms-identity-javascript-nodejs-tutorial**     | Multi-chapter tutorial covering authentication, authorization, deployment, access control, and advanced scenarios (BFF, React SPA, CAE, etc.) in Node.js & Express. |
-| **ms-identity-node**                           | Standalone Express web app with MSAL Node for sign-in and Microsoft Graph calls.                 |
+| **1-server-side**                              | Node.js & Express web applications, console applications, and daemon services.                  |
+| **2-client-side**                              | Client-side React Single Page Applications with Backend-for-Frontend pattern.                   |
+| **3-desktop**                                  | Desktop applications using Electron framework.                                                  |
+| **5-advanced**                                 | Advanced scenarios including Backend for Frontend (BFF) with React SPA and Express backend.     |
 
 ---
 
@@ -40,9 +61,22 @@ All samples use the latest supported Node.js versions and Microsoft Authenticati
 
 ## 🔍 Finding the Right Sample
 
-- **By scenario:** Start with the folder that matches your application type (console, desktop, web app, advanced).
-- **By technology:** Within each folder, samples are organized by technology (e.g., Express, Electron).
-- **By feature:** Each sample README highlights the authentication flow, APIs called, and any advanced features.
+**By Application Type:**
+- **Web Applications**: Start with `1-server-side/express-web-app-auth` for basic authentication
+- **API Integration**: Try `1-server-side/express-web-app-graph` for Microsoft Graph calls
+- **Desktop Apps**: Use `3-desktop/nodejs-desktop` for Electron applications
+- **Services/Daemons**: Check `1-server-side/nodejs-console-daemon` for background services
+- **Single Page Apps**: Explore `2-client-side/react-spa-bff` for React applications
+
+**By Authentication Flow:**
+- **Authorization Code Flow**: Most Express web applications
+- **Client Credentials Flow**: Console daemon applications
+- **Interactive Flow**: Desktop and client-side applications
+
+**By Complexity Level:**
+- **Beginner**: `express-web-app-auth` (basic authentication)
+- **Intermediate**: `express-web-app-graph` (with API calls)
+- **Advanced**: `call-graph-bff` (full BFF architecture)
 
 ---
 
@@ -50,7 +84,14 @@ All samples use the latest supported Node.js versions and Microsoft Authenticati
 
 - **Configuration** is managed via environment variables or configuration files (e.g., `authConfig.js`).
 - **Secrets and credentials** should never be committed to source control. Use [Azure Key Vault](https://learn.microsoft.com/azure/key-vault/general/basic-concepts) or environment variables for sensitive data.
-- **PowerShell scripts** are provided where helpful for Microsoft Entra app registration.
+- **PowerShell scripts** are provided in the top-level `AppCreationScripts/` folder for Microsoft Entra app registration.
+- **Environment files** (`.env`) are included in `.gitignore` files across all samples for security.
+
+## 🛠️ Prerequisites
+
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- [Microsoft Entra ID tenant](https://learn.microsoft.com/entra/identity-platform/quickstart-create-new-tenant)
+- [Visual Studio Code](https://code.visualstudio.com/) (recommended for development)
 
 ---
 
@@ -80,10 +121,19 @@ Happy coding!
 
 | Sample directory                                 | Application type         | Feature(s) demonstrated                                  | Authentication libraries used |
 |:-------------------------------------------------|-------------------------|----------------------------------------------------------|-------------------------------|
-| ms-identity-javascript-nodejs-console            | Console/daemon app      | Token acquisition, web API calls                         | MSAL Node                     |
-| ms-identity-javascript-nodejs-desktop            | Electron desktop app    | Interactive login, token acquisition, web API calls      | MSAL Node                     |
-| ms-identity-javascript-nodejs-tutorial           | Web app (multi-scenario)| Authentication, authorization, deployment, access control, advanced scenarios | MSAL Node, Express, React     |
-| ms-identity-node                                 | Express web app         | Sign-in, token acquisition, Microsoft Graph calls        | MSAL Node, Express            |
+| **1-server-side/express-App**                   | Express web app         | Basic authentication, sign-in, user profile             | MSAL Node                     |
+| **1-server-side/express-web-app-auth**          | Express web app         | Basic authentication with msal-node-wrapper             | MSAL Node Wrapper             |
+| **1-server-side/express-web-app-graph**         | Express web app         | Authentication, Microsoft Graph calls                   | MSAL Node Wrapper, MS Graph SDK |
+| **1-server-side/express-web-app-deployment**    | Express web app         | Production deployment patterns                           | MSAL Node Wrapper             |
+| **1-server-side/express-web-app-roles**         | Express web app         | Role-based access control (RBAC)                        | MSAL Node Wrapper             |
+| **1-server-side/express-web-app-groups**        | Express web app         | Security groups-based access control                    | MSAL Node Wrapper             |
+| **1-server-side/nodejs-call-graph**             | Express web app         | Authentication, Microsoft Graph calls, multiple APIs    | MSAL Node Wrapper, MS Graph SDK |
+| **1-server-side/nodejs-console-daemon**         | Console/daemon app      | Client credentials flow, daemon services                | MSAL Node                     |
+| **1-server-side/node-console-app**              | Console/CLI app         | Interactive CLI authentication                           | MSAL Node                     |
+| **2-client-side/react-spa-bff**                 | React SPA               | Single Page Application with BFF pattern                | React                         |
+| **3-desktop/nodejs-desktop**                    | Electron desktop app    | Interactive login, token acquisition, web API calls     | MSAL Node                     |
+| **5-advanced/bff-backend**                      | Express BFF backend     | Backend for Frontend server implementation              | MSAL Node, MS Graph SDK       |
+| **5-advanced/call-graph-bff**                   | React SPA + Express BFF | Complete BFF architecture with React SPA and Express backend | MSAL Node, React        |
 
 ## Resources
 
